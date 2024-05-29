@@ -39,7 +39,7 @@ func (args envVarsExportArgs) validate() error {
 		return fmt.Errorf("page size should be greater than or equal 1")
 	}
 	if args.outputFile == "" {
-		return fmt.Errorf("input file cannot be empty")
+		return fmt.Errorf("output file cannot be empty")
 	}
 	return nil
 }
