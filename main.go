@@ -74,7 +74,7 @@ func main() {
 		&cli.StringSliceFlag{
 			Name:        flagEnvScopes,
 			Aliases:     []string{"s"},
-			Value:       cli.NewStringSlice("*"),
+			Value:       nil,
 			Usage:       "Filter env vars by scopes",
 			Destination: &envVarsExportArgs.scopes,
 			EnvVars:     []string{"SCOPES"},
