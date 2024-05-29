@@ -42,7 +42,7 @@ func main() {
 
 	app := &cli.App{
 		Name:    "gitlab-env",
-		Usage:   "A handy Gitlab tool for exporting and importing CICD environment variables",
+		Usage:   "A handy tool for exporting and importing Gitlab CICD environment variables",
 		Version: version,
 	}
 
