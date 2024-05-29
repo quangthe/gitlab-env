@@ -133,7 +133,7 @@ func main() {
 		&cli.StringSliceFlag{
 			Name:        flagEnvScopes,
 			Aliases:     []string{"s"},
-			Value:       cli.NewStringSlice("*"),
+			Value:       nil,
 			Usage:       "Filter imported env vars by scopes",
 			Destination: &envVarsImportArgs.scopes,
 			EnvVars:     []string{"SCOPES"},
