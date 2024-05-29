@@ -1,0 +1,42 @@
+[
+  {
+    "variable_type": "env_var",
+    "key": "POLL_USERNAME",
+    "value": "app",
+    "protected": true,
+    "masked": true,
+    "raw": true,
+    "environment_scope": "*",
+    "description": ""
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POLL_PASSWORD",
+    "value": "secret-password",
+    "protected": true,
+    "masked": true,
+    "raw": true,
+    "environment_scope": "*",
+    "description": ""
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POLL_URL",
+    "value": "jdbc:postgresql:\\/\\/shared-database:5432\\/polls",
+    "protected": true,
+    "masked": false,
+    "raw": true,
+    "environment_scope": "*",
+    "description": ""
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POLL_PASSWORD",
+    "value": "secret-password-xxx",
+    "protected": true,
+    "masked": true,
+    "raw": true,
+    "environment_scope": "prod",
+    "description": ""
+  }
+]
