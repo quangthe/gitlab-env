@@ -21,7 +21,7 @@ jobs:
       image: golang:1.22
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Run app test
         run: |
           go fmt $(go list ./... | grep -v /vendor/)
