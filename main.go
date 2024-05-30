@@ -38,6 +38,7 @@ var (
 	version = "dev"
 	commit  = "none"
 	date    = "unknown"
+	builtBy = "human"
 )
 
 func main() {
@@ -51,7 +52,7 @@ func main() {
 	}
 
 	cli.VersionPrinter = func(cCtx *cli.Context) {
-		fmt.Printf("gitlab-env: version=%s commit=%s date=%s\n", version, commit, date)
+		fmt.Printf("gitlab-env: version=%s commit=%s date=%s builtBy=%s\n", version, commit, date, builtBy)
 	}
 
 	exportFlags := []cli.Flag{
