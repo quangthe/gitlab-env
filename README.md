@@ -4,15 +4,17 @@ A handy tool to export and import a large number of CICD environment variables.
 
 Command usage:
 ```shell
-./gitlab-env -h
-./gitlab-env export -h
-./gitlab-env import -h
+go install github.com/quangthe/gitlab-env@latest
+
+gitlab-env -h
+gitlab-env export -h
+gitlab-env import -h
 ```
 
 ## Export Gitlab project env vars
 
 ```shell
-./gitlab-env export \
+gitlab-env export \
   --gitlab-token "your-gitlab-token" \
   --gitlab-host "gitlab.example.com"  \
   --project-id "55" \
@@ -22,7 +24,7 @@ Command usage:
 
 Filter by environment scopes `--env-scopes`:
 ```shell
-./gitlab-env export \
+gitlab-env export \
   --gitlab-token "your-gitlab-token" \
   --gitlab-host "gitlab.example.com"  \
   --project-id "55" \
@@ -59,7 +61,7 @@ The gitlab.json file will look like this
 ## Import env vars into Gitlab project
 
 ```shell
-./gitlab-env import \
+gitlab-env import \
   --gitlab-token "your-gitlab-token" \
   --gitlab-host "gitlab.example.com"  \
   --project-id "56" \
