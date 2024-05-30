@@ -34,7 +34,11 @@ type GitlabEnvVar struct {
 }
 
 // for app version
-var version string
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
 
 func main() {
 	var envVarsExportArgs envVarsExportArgs
@@ -44,6 +48,10 @@ func main() {
 		Name:    "gitlab-env",
 		Usage:   "A handy tool for exporting and importing Gitlab CICD environment variables",
 		Version: version,
+	}
+
+	cli.VersionPrinter = func(cCtx *cli.Context) {
+		fmt.Printf("gitlab-env: version=%s commit=%s date=%s\n", version, commit, date)
 	}
 
 	exportFlags := []cli.Flag{
