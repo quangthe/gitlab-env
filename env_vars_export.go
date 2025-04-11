@@ -66,14 +66,12 @@ func exportProjectEnvVars(ctx context.Context, args envVarsExportArgs) error {
 		req, err := http.NewRequest(http.MethodGet, requestUrl, nil)
 		if err != nil {
 			return fmt.Errorf("could not create request: %s", err)
-			break
 		}
 		req.Header.Set("PRIVATE-TOKEN", args.gitlabToken)
 
 		res, err := http.DefaultClient.Do(req)
 		if err != nil {
 			return fmt.Errorf("error making http request: %s\n", err)
-			break
 		}
 		logrus.Info("response status code=", res.StatusCode)
 
@@ -81,7 +79,6 @@ func exportProjectEnvVars(ctx context.Context, args envVarsExportArgs) error {
 		body, err := io.ReadAll(res.Body) // response body is []byte
 		if err != nil {
 			return fmt.Errorf("failed to read response body: %v", err)
-			break
 		}
 
 		var envVars []GitlabEnvVar
