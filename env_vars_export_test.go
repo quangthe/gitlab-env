@@ -18,10 +18,10 @@ func Test_buildEnvVarsExportUrl(t *testing.T) {
 				gitlabHost:  "gitlab.example.com",
 				projectId:   "1",
 				scopes:      *cli.NewStringSlice("dev"),
-				pageSize:    150,
+				pageSize:    100,
 				pageNumber:  1,
 			},
-			want: "https://gitlab.example.com/api/v4/projects/1/variables?page=1&per_page=150",
+			want: "https://gitlab.example.com/api/v4/projects/1/variables?page=1&per_page=100",
 		},
 	}
 	for _, tt := range tests {

@@ -14,12 +14,14 @@ const (
 	flagEnvScopes   = "env-scopes"
 	flagPageSize    = "page-size"
 	flagPageNumber  = "page-number"
+	flagExportAll   = "export-all"
 	flagOutputFile  = "output-file"
 	flagInputFile   = "input-file"
 )
 
 const (
-	defaultJsonFile = "gitlab-env-vars.json"
+	defaultJsonFile   = "gitlab-env-vars.json"
+	gitlabMaxPageSize = 100
 )
 
 type GitlabEnvVar struct {
@@ -91,7 +93,7 @@ func main() {
 		&cli.UintFlag{
 			Name:        flagPageSize,
 			Aliases:     nil,
-			Value:       1000,
+			Value:       gitlabMaxPageSize,
 			Usage:       "Page size of return result",
 			Destination: &envVarsExportArgs.pageSize,
 			EnvVars:     []string{"ENV_VAR_PAGE_SIZE"},
@@ -103,6 +105,14 @@ func main() {
 			Usage:       "Page number of return result",
 			Destination: &envVarsExportArgs.pageNumber,
 			EnvVars:     []string{"ENV_VAR_PAGE_NUMBER"},
+		},
+		&cli.BoolFlag{
+			Name:        flagExportAll,
+			Aliases:     nil,
+			Value:       false,
+			Usage:       "Export all project env vars. The paging page-number page-size params will be ignored",
+			Destination: &envVarsExportArgs.exportAll,
+			EnvVars:     []string{"ENV_VAR_EXPORT_ALL"},
 		},
 		&cli.StringFlag{
 			Name:        flagOutputFile,

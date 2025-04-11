@@ -20,7 +20,9 @@ gitlab-env export \
   --project-id "55" \
   --output-file gitlab.json
 ```
-> By default, the command will retrieve up to `1000` env vars. Use `--page-size` flag to change the maximum number of exported env vars. 
+> By default, the command will query the gitlab project variable with --page-number=1, --page-size=100
+
+> Tips: Use `--export-all=true` flag to export all project env vars. 
 
 Filter by environment scopes `--env-scopes`:
 ```shell
